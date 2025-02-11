@@ -1,0 +1,39 @@
+h1{
+    padding-left: 8px;
+}
+.intro1{
+    background-color: rgba(208, 101, 30, 0);
+    color: rgb(255, 0, 0);
+}
+.intro2{
+    border-style: solid;
+    border-color: green;
+    text-align: center;
+}
+.content{
+    padding: 10px;
+    background-color: rgb(243, 236, 238);
+    margin-left: 8px;
+}
+.content .content-title{
+    background-color: white;
+    border-left: 8px solid rgb(5, 142, 50);
+}
+.content .content-title .content-ab1{
+color: brown;
+}
+.content .content-title .content-ab2{
+    color: red;
+}
+.content .content-title .content-ab3{
+    color: blue;
+}
+.content .content-title .content-ab4{
+    color: red;
+}.content .content-title .content-ab5{
+    color: blue;
+}
+.button{
+    background-color: greenyellow;
+    color: white;
+}

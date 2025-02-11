@@ -3,16 +3,16 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 8px;
 }
-.abv{
-   
+.content{
+   padding: 10px;
    background-color: rgb(225, 222, 134);
    border-left: 8px solid rgb(103, 103, 9); 
-   margin-left: 8px;
+   </div>
 }
-.doanvan{
+.intro{
     margin-left: 8px;
 }
-.tieude{
+.content .content-tilte{
     margin-top: 8px;
 }
-    
+
