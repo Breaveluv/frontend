@@ -1,0 +1,18 @@
+h1{
+    color: rgb(35, 134, 200);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 8px;
+}
+.abv{
+   
+   background-color: rgb(225, 222, 134);
+   border-left: 8px solid rgb(103, 103, 9); 
+   margin-left: 8px;
+}
+.doanvan{
+    margin-left: 8px;
+}
+.tieude{
+    margin-top: 8px;
+}
+    

@@ -1,0 +1,24 @@
+.phongnen{
+    background-color: rgba(235, 230, 230, 0.937);
+   
+}
+.bang{
+    text-align: center;
+    margin-right: 0;
+    margin-left: auto;
+    width: 100%;
+}
+.dong1{
+    color: white;
+    background-color: blue;
+
+}
+.dong3{
+    background-color: white;
+}
+.cap{
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+    
+    
+}
