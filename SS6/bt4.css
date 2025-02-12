@@ -1,0 +1,25 @@
+.header{
+    text-align: center;
+    background-color: rgb(20, 174, 33);
+    color: white;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+.foot{
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+
+.man1{
+    background-color: rgb(235, 235, 235);
+    
+    padding-left: 10px;
+    padding-right: 100px;
+}
+.vien{
+    opacity: 0.3;
+}
+.image{
+    padding-left: 30px;
+}
