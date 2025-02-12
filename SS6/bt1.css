@@ -1,0 +1,36 @@
+
+.header{
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+.navigation{
+    padding-bottom: 10px;
+    
+    
+}
+.navi1{
+    color: white;
+    text-decoration: none;
+}
+
+    text-align: center;
+}
+.img{
+    vertical-align: middle
+
+}
+.main{
+    text-align: center;
+   padding-left: 560px;
+   ;
+}
+
+.button{
+    margin-top: 100px;
+    background-color: beige;
+    
+    text-align: center;
+}

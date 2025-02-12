@@ -1,0 +1,33 @@
+.main{
+    background-color: rgb(203, 207, 211);
+   
+}
+.table{
+    margin-right: 0;
+    margin-left: auto;
+    width: 100%;
+}
+.content-ab1{
+    background-color: white;
+}
+.content-ab2{
+    background-color: white;
+}
+.View{
+    
+    background-color: green;
+    color: white;
+}
+.Update{
+   
+    background-color:yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Delete{
+    
+    background-color: red;
+    color: white;
+}
+.content-1{
+    background-color: blue;
+}

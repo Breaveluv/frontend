@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+   
+    width: 300px;
+    padding: 5px;
+    background-color: #F8F9FA;
+}
+h2{
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.form{
+    width: 95%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    padding-left:30px;
+    padding-right: 30px;
+}
+.button{
+    background-color: blue;
+    color: white;
+    font-size: 10px;
+    width: 170px;
+    height: 20px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+}
+}

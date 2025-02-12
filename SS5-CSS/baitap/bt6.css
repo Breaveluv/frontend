@@ -11,16 +11,24 @@ h1{
     text-align: center;
 }
 .content{
-    padding: 10px;
+    padding: ;
     background-color: rgb(243, 236, 238);
     margin-left: 8px;
 }
 .content .content-title{
+    padding: 2px;
     background-color: white;
     border-left: 8px solid rgb(5, 142, 50);
 }
+.content-title1{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-left:5px;
+}
 .content .content-title .content-ab1{
 color: brown;
+padding-left: 2px;
 }
 .content .content-title .content-ab2{
     color: red;
@@ -34,6 +42,7 @@ color: brown;
     color: blue;
 }
 .button{
-    background-color: greenyellow;
+    
+    background-color: rgb(166, 20, 47);
     color: white;
 }
