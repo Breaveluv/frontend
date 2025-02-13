@@ -1,0 +1,28 @@
+.main{
+    width: 400px;
+    height: 160px;
+    border: 1px solid rgb(222, 218, 218);
+    border-radius: 3px;
+
+}
+.body1{
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid rgb(222, 218, 218);
+    background-color: rgb(128, 188, 241);
+
+}.body2{
+    border-radius: 3px;
+    border: 1px solid rgb(222, 218, 218);
+   
+
+}
+.muiten{
+    position: absolute;
+     top: 10;
+     right: 10;
+}
+.colorred{
+    color: red;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}

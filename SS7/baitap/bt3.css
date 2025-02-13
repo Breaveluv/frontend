@@ -1,0 +1,22 @@
+.img1{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+
+}
+.img2{
+    width: 700px;
+    height: 620px;
+
+}
+.main1{
+    display: inline-block;
+}
+.main{
+    
+   
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}

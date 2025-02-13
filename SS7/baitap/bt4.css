@@ -1,0 +1,30 @@
+.header{
+    border-left: 5px solid red;
+    margin: 20px;
+    width: 100%;
+}
+.img1{
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+}
+.body{
+    position: relative;
+
+}
+.form{
+   position:absolute;
+   bottom:30px;
+   left: 30px; 
+   color:white;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.border{
+    opacity: 0.2;
+}
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.over{
+    padding: 20px;
+}

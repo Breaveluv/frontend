@@ -1,0 +1,31 @@
+.contenner{
+    background-color: rgb(220, 227, 227);
+    width: 600px;
+    height: 250px;
+    padding: 2px 6px;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bt1{
+    height: 30px;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    text-align: center;
+    padding: 6px;
+}
+.bt2{
+    height: 30px;
+    border-radius: 3px;
+    border:0.8px solid rgb(167, 175, 175);
+    text-align: center;
+    padding: 3px;
+}
+img{
+    vertical-align: middle;
+    margin-right: 3px;
+    text-align: center
+    
+}
