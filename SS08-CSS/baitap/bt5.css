@@ -1,0 +1,50 @@
+.top{
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(222, 219, 217);
+}
+.down{
+    color: white;
+    background-color: rgb(50, 50, 235);
+    border-radius: 3px;
+    border: none;
+    width: 120px;
+    height:30px;
+    margin: 10px;
+    opacity: 0.7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.link{
+    opacity: 1;
+}
+.top1{
+    opacity: 0.5;
+    
+}
+.learn{
+    color: black;
+    background-color: white;
+    font-size: px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 3px;
+    border:1px solid rgb(203, 200, 200);
+    width: 120px;
+    height:30px;
+    margin: 10px;
+    opacity: 0.8;
+}
+.vien{
+    opacity: 0.5;
+}
+.bottom{
+    background-color: rgb(154, 151, 147);
+    
+   text-align: center;
+   opacity: 0.5;
+   height: 200px;
+   padding: 30px;
+}
+i{
+    font-size: 20px;
+    margin-right: 20px;
+}

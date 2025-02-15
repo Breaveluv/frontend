@@ -3,6 +3,7 @@
 
     border:5px solid pink ;
     border-radius: 5px;
+    position: relative;
 }
 .head{
     text-align: left;
@@ -20,6 +21,9 @@
     border: none;
     border-radius: 3px;
     padding-left: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 80;
     
 }
 .Send{
@@ -28,8 +32,14 @@
     color: white;
     background-color: rgb(52, 52, 254);
     padding-left: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;;
+    
 }
 .foot{
-position: relative;
-}
 
+}
+span{
+    opacity: 0.3;
+}

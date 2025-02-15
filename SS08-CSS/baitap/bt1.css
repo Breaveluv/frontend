@@ -1,0 +1,46 @@
+.container{
+    width: 80%;
+    border-collapse: collapse 1px solid rgb(11, 9, 9);
+}
+img{
+   
+    padding-left: 160px;
+    text-align: center;
+    width: 300px;
+    height: 200px;
+}
+.mo{
+    text-align: center;
+    opacity: 0.3;
+}
+h3{
+    text-align: center;
+}
+.khung1{
+    text-align: center;
+    
+    
+}
+p{
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+.Full{
+   padding-left: 250px;
+}
+button{
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    width: 100px;
+    height: 50px;
+}
+table{
+    border-collapse: collapse;
+    border: rgb(217, 214, 214);
+    
+}
+.khung2{
+    border-right: 1px solid black;
+}
