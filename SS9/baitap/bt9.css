@@ -1,37 +1,42 @@
-.head{
-    position: relative;
-    width: 100%;
-    text-align: center;
-
-}
-.note1{
-    position: absolute;
-            color:red;
-            left:20% ;
-            bottom: 0;
-            transform: translate(-50%, -50%);
-            
-            padding: 0.5rem;
-            text-align: center;
-            font-size: 16px;
-}
-p{
-    font-size: 30px;
-}
-.body{
+.container{
+    background-color: rgb(207, 210, 213);
     display: flex;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+   flex-direction: row;
+   width: 100px;
+   gap:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     flex-wrap: wrap;
+    justify-content: center;
+    border: 3px solid black;
+    width: 1250px;
+    
 }
-.abc{
-    width: 150px;
-   height: 150px;
-   border-radius: 3px;
-  
-   display: flex;
+.container .class{
+    background-color: rgb(32, 183, 60);
+    color: rgb(90, 15, 210);
+    width: 400px;
+    height: 50px;
+    border-radius: 5px; 
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.gfg {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.text-container {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(41, 41, 41, 0.8);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 16px;
 }
