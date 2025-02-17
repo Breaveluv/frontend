@@ -36,6 +36,10 @@ a{
     height: 30px;
     color: white;
     text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+
 }
 .body{
     padding-left:40px ;
