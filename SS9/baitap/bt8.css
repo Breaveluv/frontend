@@ -1,0 +1,29 @@
+.head{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+}
+.body1{
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(200, 202, 203);
+}
+button{
+    border: none;
+    background-color: black;
+    color:white ;
+    border-radius: 5px;
+    height: 30px;
+}
+.body2{
+    text-align: center;
+}
+ .item{
+   background-color: blue;
+}

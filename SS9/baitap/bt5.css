@@ -1,0 +1,63 @@
+.container .top{
+   
+    color:white
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content:center;
+    flex-wrap: row wrap;
+    
+    
+    gap:10px; 
+   
+}
+
+
+.class{
+    background-color: purple;
+    border-radius: 5px;
+    width: 30%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container .bot{
+   
+    color:white
+    width: 60px;
+    height: 50px;
+    
+    height: 50px;
+    flex-wrap: row wrap;
+    padding: 10px;
+    height: 50px;
+    gap:10px; 
+   
+    justify-content: space-between;
+    display: flex;
+   
+}
+
+.class1{
+    background-color: purple;
+    border-radius: 5px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15.9%;
+}
+.class2{
+    background-color: purple;
+    border-radius: 5px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15.9%;
+}

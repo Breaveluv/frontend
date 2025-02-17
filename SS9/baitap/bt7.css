@@ -1,0 +1,44 @@
+.top{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+.abc{
+   display: flex;
+   justify-content: space-evenly;
+        align-items:center;
+        gap: 10px;
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+.color{
+    color:rgb(56, 40, 233); 
+}
+.body1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    background-color: rgb(218, 219, 220);
+    width: 50%;
+}
+.body2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    background-color: rgb(218, 221, 224);
+    width: 50%;
+}
+.foot{
+    background-color: black;
+    height: 30px;
+    color: white;
+    text-align: center;
+}
+.body{
+    padding-left:40px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,70 @@
+.container{
+    background-color: rgb(207, 210, 213);
+  
+    border: 3px solid black;
+
+    
+}
+.container .top{
+   
+    color:white
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: row wrap;
+    padding: 10px;
+    height: 50px;
+    gap:10px; 
+   
+ }
+
+
+.class{
+    background-color: blue;
+    border-radius: 5px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container .bot{
+   
+    color:white
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap:  row wrap;
+    padding: 10px;
+    gap:10px;
+}
+.class7{
+    background-color: blue;
+    border-radius: 5px;
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+.class5{
+    background-color: blue;
+    border-radius: 5px;
+   flex: 2;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+}
+.class6{
+    background-color: blue;
+    border-radius: 5px;
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   }

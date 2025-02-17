@@ -1,0 +1,21 @@
+.container{
+    background-color: rgb(105, 107, 108);
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: rgb(7, 4, 0);
+    
+}
+span{
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+   
+}
