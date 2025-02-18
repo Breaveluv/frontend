@@ -1,0 +1,37 @@
+.abc{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding-top:20px ;
+    background-color: rgb(208, 211, 213);
+
+    
+}
+img{
+    width: 300px;
+    height: 180px;
+    border-radius: 5px;
+}
+button{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 300px;
+    height: 60px;
+    font-size: 30px;
+    border: none;
+    background-color: rgb(19, 19, 19);
+    border-radius: 5px;
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    background-image: linear-gradient( rgb(19, 19, 19), white);
+    
+}
+.ab{
+    justify-content: center;
+    align-items: center;
+}
+p{
+    padding-bottom: 20px;
+}

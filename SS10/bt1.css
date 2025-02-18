@@ -1,0 +1,36 @@
+h1{
+    font-family: "Grechen Fuemen", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(159, 158, 158);
+    
+    align-items: center;
+    margin-bottom: 10px;
+}
+.abc{
+  
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+button{
+    color: white;
+    height: 30px ;
+    background-color: rgb(100, 102, 104);
+    border-radius: 5px;
+   border: none;
+    
+}
+.home{
+    color: black;
+}
+.home1{
+    color: black;
+    opacity: 0.3;
+}

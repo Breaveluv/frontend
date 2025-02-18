@@ -1,0 +1,32 @@
+.container{
+    background-color: antiquewhite;
+}
+.head{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-right: 50px;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    align-items: center;
+    gap:40px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 10px 5px white;
+}
+.body-line1{
+    width: 30%;
+}
+button{
+    color: white;
+    background-color: red;
+    border: none;
+    height: 30px ;
+    border-radius: 2px;
+}

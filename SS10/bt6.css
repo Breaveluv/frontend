@@ -1,0 +1,47 @@
+.container{
+    width: 100%;
+}
+.main{
+    position: relative;
+    height: 100%;
+}
+.content{
+    position: absolute;
+    bottom:0px;
+    left:50px;
+    color:white;
+    width: 50%px;
+
+}
+.fb{
+    color: white;
+    position: absolute;
+    top:0px;
+    left: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.body{
+    width: 76%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    background-color: rgb(219, 216, 212);
+   
+}
+.body button:hover{
+    background-color: black;
+    color: white;
+}
+.body p{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+text-align: center;
+}
+.body p:hover{
+    background-color: black;
+    color: white;
+
+}
