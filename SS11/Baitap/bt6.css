@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+
+.main_content {
+    background-color: #f5cf8d;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #b2d6ff;
+    align-items: center;
+    height: 150px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+}
+
+.content_section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    background-color: #ebedf0;
+    height: 200px;
+}
+
+.signup_section {
+    height: 100px;
+    display: flex;
+    background-color: #d7e9fe;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.feature_section {
+    width: 33.33%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature_section:nth-last-child(1) {
+    order: 4;
+    background-color: #f09a9d;
+}
+
+.feature_section:nth-last-child(2) {
+    background-color: #c8c6fa;
+    order: 5;
+}
+
+.feature_section:nth-last-child(3) {
+    background-color: #f5cf8d;
+}
+
+@media screen and (max-width: 1024px) {
+    section {
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .signup_section {
+        width: 50%;
+        height: 200px;
+    }
+
+    .feature_section {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .signup_section {
+        width: 100%;
+    }
+
+    .feature_section {
+        width: 100%;
+    }
+}
