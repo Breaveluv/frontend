@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width:100%;
+    height: 100%;
+ 
+
+
+}
+.head{
+    display: flex;
+    margin: 10px 0px;
+    display: flex;
+    gap: 10px;
+}
+.head .head-left{
+    color:#A04C4C ;
+    background-color:white ;
+    width: 30%;
+    font-size: 40px;
+    height: 5vh;
+    text-align: center;
+}
+.head .head-right{
+    color: white;
+    background-color: #9F4A4B;
+    
+    width: 70%;
+    text-align: center;
+    height: 5vh;
+    padding-top: 9px;
+
+}
+.head .head-right .main-abc{
+    display: none;
+}
+.body{
+    display: flex;
+    gap: 10px;
+}
+.body .body-left{
+    background-color: #9F4A4B;
+    color: #ffffff;
+    width: 67.5%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.body .body-right{
+    background-color: #9F4A4B;
+    color: white;
+    width: 33.5%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.foot{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+}
+.foot div{
+    
+    width: 32.899%;
+    background-color: #9F4A4B;
+    color: white;
+    height: 10vh;
+    font-size:30px ;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+@media screen and (max-width:1200px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+    }
+    .body .body-left{
+        width: 100%;
+    }
+    .body .body-right{
+        width: 100%;
+    }
+    .foot div{
+        width: 49.47%;
+    }
+}
+@media screen and (max-width:768px) {
+   
+
+    .head .head-right {
+       width: 30%;
+    }
+    .head .head-left {
+        width: 69%;
+    }
+    .foot div{
+        width: 100%;
+    }
+}
