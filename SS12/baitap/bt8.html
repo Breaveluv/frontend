@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="../bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
     <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="bt8.css">
-</head>
-<body>
+    <link rel="stylesheet" href="bt8.css" />
+  </head>
+  <body>
     <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <h1>Payment</h1>
+      <input type="radio" checked />Credit card <br />
+      <input type="radio" />Debit card <br />
+      <input type="radio" />Paypal <br />
+      <div class="mb-31">
+        <div>
+          <label for="exampleInputEmail1" class="form-label"
+            >Name on card
+          </label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+        <div>
+          <label for="exampleInputEmail1"  class="form-label">Credit Card</label>
+          <br>
+          <input type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp">
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-</body>
+      </div>
+      <div class="mb-32">
+        <div><label for="exampleInputPassword1" class="form-label">Expiration</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        /></div>
+        <div><label for="exampleInputPassword1" class="form-label">CCV</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            /></div>
+        
+      </div>
+
+      
+      <button type="submit" class="btn btn-primary abc">Submit</button>
+    </form>
+  </body>
 </html>

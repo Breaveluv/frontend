@@ -1,0 +1,15 @@
+.mb-31{
+    display: flex;
+    gap: 30px;
+}
+.mb-32{
+    display: flex;
+    gap: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(213, 212, 212);
+    
+}
+.abc{
+    margin-top: 10px;
+    width: 550px;
+}
