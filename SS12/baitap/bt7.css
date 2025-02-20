@@ -1,0 +1,35 @@
+.main{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 5px;
+}
+img{
+    width: 100%;
+}
+.img1{
+    position: relative;
+    
+}
+.img1 .img1-main{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap:350px;
+
+}
+.img1-main-all{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+}
+.boot{
+    
+    color: blueviolet;
+}
+h2{
+    border-bottom: 1px solid rgb(222, 221, 220);
+}

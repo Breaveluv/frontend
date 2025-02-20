@@ -1,0 +1,27 @@
+h1{
+    text-align: center;
+}
+.container{
+    display: flex ;
+    gap: 10px;
+    justify-content: center;
+    
+}
+.container div{
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+    padding-bottom:10px ;
+    border-radius: 3px;
+}
+button{
+    width: 90%;
+}
+.container .div1{
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+    padding-bottom:10px ;
+    background-color: #FFC107;
+    border-radius: 3px;
+}

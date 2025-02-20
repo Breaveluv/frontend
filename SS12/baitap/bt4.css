@@ -1,0 +1,25 @@
+.head{
+   
+    flex-direction:space-around;
+    text-align: center;
+    
+}
+input{
+    width: 100%;
+}
+button{
+    background-color: #0785e5;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+}
+.container{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding-top:10px ;
+    padding-bottom:10px ;
+
+}
+textarea{
+    width: 100%;
+}

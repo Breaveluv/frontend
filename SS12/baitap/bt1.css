@@ -1,0 +1,18 @@
+.abc{
+   color: #F6F2F6;
+    background-color: #FD664B;
+}
+.dropdown-item{
+    background-color: #FD664B;
+    color: #F6F2F6;
+}
+.dropdown-menu{
+    background-color: #FD664B;
+}
+.dropdown-item:hover{
+    background-color: #1967D2;
+    color: #F6F2F6;
+}
+.abc:hover{
+    color: #F6F2F6;
+}
