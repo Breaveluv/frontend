@@ -6,6 +6,8 @@
 .container{
     width: 1440px;
    
+    
+   
 }
 .head{
     display: flex;
@@ -33,6 +35,9 @@
 }
 .body .body-img{
     position: relative;
+    font-family: Poppins;
+    font-size: 52px;
+    line-height: 65px;
 }
 .body .body-main{
     position: absolute;
@@ -56,6 +61,7 @@
     background-color:#B88E2F ;
     color: white;
     font-size: 30px;
+    border: none;
 }
 .foot h2{
     text-align: center;
