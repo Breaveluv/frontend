@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    
+}
+.header .header-top{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:20px
+   
+}
+ .header .header-top p{
+        text-align: center;
+    }
+.header .header-top .dropdown button{
+    display: flex;
+    justify-content: flex-end;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.header .header-bottom{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(197, 192, 192);
+}
+.header .header-bottom .header-bottom-main {
+    display: flex;
+    justify-self: center;
+    gap: 10px;
+    align-items: center;
+}
+.header .header-bottom .but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.header .header-bottom .but .find{
+    position: relative;
+}
+.header .header-bottom .but .findbody{
+    position: absolute;
+    top: 0px;
+}
+.heart
