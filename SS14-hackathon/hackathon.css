@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+   margin-left: 20px;
+    width: 1152px;
+}
+.head{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    align-items: center;
+}
+.head img{
+    display: none;
+}
+.body{
+    width: 100%;
+    
+}
+.body .body-top{
+    display: flex;
+    
+}
+.body-top .body-top-left{
+    flex: 1;
+}
+.body-top .body-top-right{
+    flex:0.5;
+}
