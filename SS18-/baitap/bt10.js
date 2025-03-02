@@ -7,31 +7,31 @@ let num3 = num % 10;
 let numStr = "";
 switch (num1) {
     case 1:
-        numStr += "Mot tram ";
+        numStr = "Mot tram ";
         break;
     case 2:
-        numStr += "Hai tram ";
+        numStr = "Hai tram ";
         break;
     case 3:
-        numStr += "Ba tram ";
+        numStr ="Ba tram ";
         break;
     case 4:
-        numStr += "Bon tram ";
+        numStr = "Bon tram ";
         break;
     case 5:
-        numStr += "Nam tram ";
+        numStr = "Nam tram ";
         break;
     case 6:
-        numStr += "Sau tram ";
+        numStr = "Sau tram ";
         break;
     case 7:
-        numStr += "Bay tram ";
+        numStr = "Bay tram ";
         break;
     case 8:
-        numStr += "Tam tram ";
+        numStr = "Tam tram ";
         break;
     case 9:
-        numStr += "Chin tram ";
+        numStr = "Chin tram ";
         break;
 }
 switch (num2) {
