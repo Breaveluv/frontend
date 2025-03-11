@@ -18,6 +18,6 @@ function email(user) {
       console.log(user);
     }
 }
-let user = ["huy@gmail.com", "hehe@gmail.com"];
+let user = ["nam@gmail.com", "hnam@gmail.com"];
 email(user);
 
