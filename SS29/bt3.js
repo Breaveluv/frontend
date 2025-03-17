@@ -1,4 +1,4 @@
-let menu = {}; // Object chứa danh mục và món ăn
+let menu = {}; 
 
 function addDish() {
     const category = prompt("Nhập tên danh mục:");

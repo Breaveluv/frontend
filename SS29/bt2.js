@@ -1,21 +1,4 @@
-/*Tạo một hệ thống quản lý sản phẩm với các chức năng CRUD.Mỗi sản phẩm có các thuộc tính:
 
-id: Định danh duy nhất.
-name: Tên sản phẩm.
-price: Giá sản phẩm.
-category: Danh mục sản phẩm.
-quantity: Số lượng sản phẩm trong kho.
- 
-
-Các chức năng:
-
-Thêm sản phẩm vào danh sách sản phẩm.
-Hiển thị tất cả sản phẩm.
-Hiển thị chi tiết sản phẩm theo id.
-Cập nhật thông tin sản phẩm (name, price, category, quantity) theo id sản phẩm.
-Xóa sản phẩm theo id.
-Lọc sản phẩm theo khoảng giá.
-Thoát.  */
 let products = [];
 
 function addProduct(id, name, price, category, quantity) {
@@ -62,11 +45,11 @@ function updateProduct(  ) {
     const indexUpdate = contactList.findIndex(contact => contact.id === idUpdate);
 
     if (indexUpdate !== -1) {
-       products[indexUpdate].name = prompt('Nhập tên mới: ', contactList[indexUpdate].name);
-        products[indexUpdate].price = prompt('Nhập email mới: ', contactList[indexUpdate].price);
-        products[indexUpdate].phone = prompt('Nhập số điện thoại mới: ', contactList[indexUpdate].phone);
-        products[indexUpdate].category = prompt('Nhập số điện thoại mới: ', contactList[indexUpdate].category);
-        productst[indexUpdate].quantity = prompt('Nhập số điện thoại mới: ', contactList[indexUpdate].quantity);
+       products[indexUpdate].name = prompt('Nhập tên mới: ');
+        products[indexUpdate].price = prompt('Nhập email mới: ');
+        products[indexUpdate].phone = prompt('Nhập số điện thoại mới: ' );
+        products[indexUpdate].category = prompt('Nhập số điện thoại mới: ');
+        productst[indexUpdate].quantity = prompt('Nhập số điện thoại mới: ', );
         alert('Cập nhật liên hệ hoàn tất');
     } else {
         alert('ID liên hệ không tồn tại');
