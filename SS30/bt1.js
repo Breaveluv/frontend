@@ -114,12 +114,22 @@ do{
 
 
     }
-        function sortProduct(){
-            let sortCho=+prompt(`Mời bạn nhập lựa chọn 
-                                1:Tăng dần
-                                2:Giảm dần `);
-            if(sortCho==1){
-                products.
-            }e
+    function sortProducts() {
+        let sortType = +prompt("Chọn kiểu sắp xếp:\n1. Tăng dần\n2. Giảm dần");
+        if (sortType === 1) {
+            products.sort((a, b) => a.price - b.price);
+            console.log("Sản phẩm đã được sắp xếp tăng dần theo giá.");
+        } else if (sortType === 2) {
+            products.sort((a, b) => b.price - a.price);
+            console.log("Sản phẩm đã được sắp xếp giảm dần theo giá.");
+        } else {
+            console.log("Lựa chọn không hợp lệ.");
         }
+    }
+    
+    // Hàm tính tổng tiền trong giỏ hàng
+    function calculateTotal() {
+        let total = carts.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        console.log(`Tổng tiền trong giỏ hàng: ${total} VND`);
+    }
        
