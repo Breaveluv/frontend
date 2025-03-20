@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .jobs li{
+            list-style-type: none;
+            border: 1px solid #ccc;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Quản lý công việc</h1>
+    <input id="job"  type="text" placeholder="nhận nhiệm vụ">
+    <button onclick="addJob()" class="btn"> thêm</button>
+    <ol class="jobs">
+     
+    </ol>
+    <script>
+         let jobs=[
+    {
+        id:1,
+        name:"học dom js"
+    },
+    {
+        id:2,
+        name:"làm bài tập dom js"
+    }
+];// lưu công việc
+// tạo function hiển thị công việc
+let flag=-1;
+ function renderJobs() {
+     let str="";
+     for (let i = 0; i < jobs.length; i++) {
+       str+=
+       `
+        <li> ${jobs[i].name} 
+         <button onclick=deleteJob(${jobs[i].id})>Xóa</button></li>
+       `
+    }
+    document.getElementsByClassName("jobs")[0].innerHTML=str;
+    console.log(str);
+ }
+ renderJobs();
+ // khai báo hàm thêm công việc
+ function addJob() {
+    let name= document.getElementById("job").value;
+    if(flag!=-1){
+       // sửa 
+       let newUpdate={
+        id:jobs[flag].id,
+        name:name
+       }
+       jobs.splice(flag,1,newUpdate);
+       document.getElementsByClassName("btn")[0].innerHTML="thêm";
+       document.getElementById("job").value="";
+       renderJobs();
+       flag=-1;
+       return;
+    }
+    // tạo đối tượng
+    let id;
+    if(jobs.length==0){
+        id=1;
+    }else{
+        id= jobs[jobs.length-1].id+1;
+    }
+    let newJob={
+        id:id,
+        name:name
+    }
+    jobs.push(newJob);
+    document.getElementById("job").value="";
+    renderJobs();
+ }
+ // khai báo hàm xóa
+ function deleteJob(id) {
+    console.log("gọi hàm xóa!",id);
+    let index= jobs.findIndex(item=>item.id==id);
+    jobs.splice(index,1);
+    renderJobs();
+ }
+ function updateJob(id) {
+    let item= jobs.find(item=>item.id==id);
+    let index= jobs.findIndex(item=>item.id==id);
+    document.getElementById("job").value= item.name;
+    
+    flag=index;
+ }
+    </script>
+</body>
+</html>

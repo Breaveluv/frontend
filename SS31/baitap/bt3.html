@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            background-color: green;
+        }
+        .btn1{
+            background-color: pink;
+        }
+        .btn2{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+  <div class="container"><p>Change backgorund color</p>
+  <br>
+    <p>Mouse click</p>
+    <button class="btn" onclick="xanh()">Xanh</button>
+    <button class="btn1" onclick="hong()">Đỏ</button>
+    <button class="btn2" onclick="tim()">tím</button>
+</div>
+    <script>
+        function xanh(){
+            let xanh=document.getElementsByClassName("container")[0];
+
+            xanh.classList.toggle("btn")
+        }
+        function hong(){
+            let hong=document.getElementsByClassName("container")[0];
+
+                hong.classList.toggle("btn1")
+        }
+        function tim(){
+            let tim=document.getElementsByClassName("container")[0];
+
+                tim.classList.toggle("btn2")
+        }
+    </script>
+</body>
+</html>

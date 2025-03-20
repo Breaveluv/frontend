@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+   <div>
+     <img src="./WIN_20250318_10_13_52_Pro.jpg" alt="">
+    <img src="./Screenshot 2025-03-18 144336.png" alt="">
+    <img src="./Screenshot 2025-03-12 114033.png" alt="">
+   </div>
+   <script>
+         const imgs = document.querySelectorAll("img");
+         imgs.forEach((img) => {
+              img.addEventListener("click", function(){
+                img.style.width = "100%";
+                img.style.height = "20%";
+              })
+         })
+   </script>
+</body>
+</html>

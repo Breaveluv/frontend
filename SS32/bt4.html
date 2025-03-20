@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            visibility: hidden; 
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Nhập email" id="email">
+    <p class="title_show">Email hợp lệ</p>
+    <button class="btn" onclick="check()">Check</button>
+    <script>
+        function check(){
+            const email = document.getElementById("email").value;
+            const p = document.querySelector("p");
+            if(email.includes("@") && email.includes(".")&& email.length > 5&&(email.includes(".com")||email.includes(".vn"))){
+                p.style.visibility = "visible";
+                email.value = "";
+        }else{
+            p.style.visibility = "visible";
+            p.style.color = "red";
+            p.textContent = "Email không hợp lệ";
+            email.value = "";
+        }
+    }
+    </script>
+</body>
+
+</html>

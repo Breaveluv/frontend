@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn" onclick="addcick()">Bấm vào tôi</button>
+    <p>Số lần tôi bấm : 0</p>
+    <script>
+        var count = 0;
+        function addcick(){
+            count++;
+            document.getElementsByTagName("p")[0].innerHTML = "Số lần tôi bấm : " + count;
+        }
+    </script>
+</body>
+</html>

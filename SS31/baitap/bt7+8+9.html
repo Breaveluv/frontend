@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="bt7+8+9.css">
+</head>
+<body>
+    <div class="container">
+        <h2>My To Do List</h2>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Title...">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script >
+        let todoList = [
+    { id: 1, task: 'Hit the gym', completed: false },
+    { id: 2, task: 'Pay bills', completed: true },
+    { id: 3, task: 'Meet George', completed: false },
+    { id: 4, task: 'Buy eggs', completed: false },
+    { id: 5, task: 'Read a book', completed: false },
+    { id: 6, task: 'Organize office', completed: false },
+];
+
+function renderList() {
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = '';
+
+    todoList.forEach(task => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span class="${task.completed ? 'completed' : ''}" onclick="toggleTask(${task.id})">
+                ${task.task}
+            </span>
+            <button class="delete-btn" onclick="deleteTask(${task.id})">×</button>
+        `;
+        taskList.appendChild(li);
+    });
+}
+
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
+    if (taskText) {
+        const newTask = {
+            id: todoList.length + 1,
+            task: taskText,
+            completed: false,
+        };
+        todoList.push(newTask);
+        taskInput.value = '';
+        renderList();
+    }
+}
+
+function toggleTask(id) {
+    todoList = todoList.map(task => 
+        task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    renderList();
+}
+
+function deleteTask(id) {
+    todoList = todoList.filter(task => task.id !== id);
+    renderList();
+}
+
+
+renderList();
+
+    </script>
+</body>
+</html>

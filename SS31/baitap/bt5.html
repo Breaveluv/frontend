@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody"></tbody>
+    </table>
+<script>
+    const employees = [
+    { id: 1, name: 'John', age: 18, address: 'New York' },
+    { id: 2, name: 'Mike', age: 22, address: 'Canada' },
+    { id: 3, name: 'Linda', age: 19, address: 'California' },
+    { id: 4, name: 'Peter', age: 25, address: 'London' },
+    { id: 5, name: 'Tony', age: 17, address: 'New York' }
+];
+
+
+function displayEmployees() {
+    const tableBody = document.getElementById('employeeTableBody');
+    tableBody.innerHTML = '';
+    
+    employees.forEach(employee => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${employee.id}</td>
+            <td>${employee.name}</td>
+            <td>${employee.age}</td>
+            <td>${employee.address}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', displayEmployees);
+</script>    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: black;
+        }
+        button{
+            margin: 10px;
+        }
+        .btncong{
+            background-color: red;
+        }
+        .btntru{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chữ sẽ thay đổi kích cỡ khi bấm nút</h1>
+    <button class="btncong">+</button>
+    <button class="btntru">-</button>
+    <script>
+        let count = 0;
+        var h1 = document.getElementsByTagName("h1")[0];
+        var buttons = document.getElementsByTagName("button");
+        buttons[0].addEventListener("click", function(){
+            count+=2;
+            h1.style.fontSize =         count+ "px";
+        });
+        buttons[1].addEventListener("click", function(){
+           if(count > 0){
+               count-=2;
+            h1.style.fontSize = count+ "px";
+           }
+        });
+
+
+
+    </script>
+</body>
+</html>
