@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        input{
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px;
+            position: relative;
+        }
+        i{
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        
+        i.fa-eye-slash{
+            position: absolute;
+            left: 296px;
+            top: 20px;
+        }
+        i.fa-eye{
+           position: absolute;
+           left: 296px;
+            top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="password" id="password" placeholder="Nhập mật khẩu">
+    <i class="fa-solid fa-eye-slash"></i>
+    <i class="fa-solid fa-eye"></i>
+    <script>
+        const password = document.getElementById("password");
+        const eye = document.querySelector(".fa-eye");
+        const eyeSlash = document.querySelector(".fa-eye-slash");
+        eye.addEventListener("click", function(){
+            password.type = "text";
+            eye.style.display = "none";
+            eyeSlash.style.display = "block";
+        });
+        eyeSlash.addEventListener("click", function(){
+            password.type = "password";
+            eye.style.display = "block";
+            eyeSlash.style.display = "none";
+        });
+
+    </script>
+</body>
+</html>

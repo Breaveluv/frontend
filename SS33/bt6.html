@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng Dụng Thời Tiết</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff; /* Màu nền nhạt */
+        }
+
+        h1 {
+            text-align: center;
+            color: #0066CC;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0066CC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .weather-display {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .weather-display h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .weather-display p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .weather-display .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ứng Dụng Thời Tiết</h1>
+    <div class="search-container">
+        <input type="text" id="cityInput" placeholder="Nhập tên thành phố">
+        <button id="searchButton">Tìm kiếm</button>
+    </div>
+    <div class="weather-display" id="weatherDisplay" style="display: none;">
+        <h2 id="cityName"></h2>
+        <p class="icon" id="weatherIcon"></p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+        <p id="humidity"></p>
+        <p id="windSpeed"></p>
+    </div>
+
+    <script>
+        const weatherData = {
+            "Hà Nội": {
+                temperature: 25,
+                humidity: 70,
+                windSpeed: 5,
+                description: "Có mây",
+                icon: "☁️"
+            },
+            "Hồ Chí Minh": {
+                temperature: 32,
+                humidity: 75,
+                windSpeed: 7,
+                description: "Nắng",
+                icon: "☀️"
+            },
+            "Đà Nẵng": {
+                temperature: 28,
+                humidity: 82,
+                windSpeed: 12,
+                description: "Mưa rào",
+                icon: "🌧️"
+            }
+        };
+
+        const searchButton = document.getElementById("searchButton");
+        const cityInput = document.getElementById("cityInput");
+        const weatherDisplay = document.getElementById("weatherDisplay");
+        const cityName = document.getElementById("cityName");
+        const weatherIcon = document.getElementById("weatherIcon");
+        const temperature = document.getElementById("temperature");
+        const description = document.getElementById("description");
+        const humidity = document.getElementById("humidity");
+        const windSpeed = document.getElementById("windSpeed");
+
+        searchButton.addEventListener("click", function() {
+            const city = cityInput.value;
+            const weather = weatherData[city];
+            if (weather) {
+                cityName.textContent = city;
+                weatherIcon.textContent = weather.icon;
+                temperature.textContent = `Nhiệt độ: ${weather.temperature}°C`;
+                description.textContent = weather.description;
+                humidity.textContent = `Độ ẩm: ${weather.humidity}%`;
+                windSpeed.textContent = `Tốc độ gió: ${weather.windSpeed} km/h`;
+                weatherDisplay.style.display = "block";
+            } else {
+                alert(`Không tìm thấy thông tin thời tiết cho ${city}`);
+                weatherDisplay.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

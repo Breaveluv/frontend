@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="">
+        <select id="categorySelect">
+            <option value="">--Lựa chọn danh mục --</option>
+        </select>
+        <button type="button" id="filterButton">Lọc</button>
+   </form>
+   <h3>Kết quả lọc:</h3>
+   <ul id="resultList"></ul>
+
+   <script>
+    let dish = [  
+        { name: 'Rau sạch', category: 'Đồ ăn' },  
+        { name: 'Thịt lợn', category: 'Đồ ăn' },  
+        { name: 'Pepsi không calo', category: 'Nước' },  
+        { name: 'Cocacola', category: 'Nước' },  
+        { name: 'Cờ lê', category: 'Dụng cụ' },  
+        { name: 'Tua vít', category: 'Dụng cụ' },  
+    ];  
+
+    let select = document.getElementById("categorySelect");
+    let button = document.getElementById("filterButton");
+    let resultList = document.getElementById("resultList");
+
+    // Mảng trung gian để lưu danh mục duy nhất
+    let uniqueCategories = [];
+    let optionsHTML = `<option value="">--Lựa chọn danh mục --</option>`;
+
+    dish.forEach((item) => {
+        if (!uniqueCategories.includes(item.category)) {
+            uniqueCategories.push(item.category);
+            optionsHTML += `<option value="${item.category}">${item.category}</option>`;
+        }
+    });
+
+    // Thêm danh mục vào select
+    select.innerHTML = optionsHTML;
+
+    // Xử lý sự kiện lọc món ăn theo danh mục
+    button.addEventListener("click", function(){
+        let selected = select.value;
+        let result = dish.filter((item) => item.category === selected);
+
+        // Hiển thị kết quả lọc
+        resultList.innerHTML = "";
+        if (result.length > 0) {
+            result.forEach((item) => {
+                let li = document.createElement("li");
+                li.textContent = item.name;
+                resultList.appendChild(li);
+            });
+        } else {
+            resultList.innerHTML = "<li>Không có món nào trong danh mục này.</li>";
+        }
+    });
+   </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <textarea cols="30"></textarea>
+   <p>0 kí tự</p>
+   <button>Kiểm tra</button>
+   <script>
+         const textarea = document.querySelector("textarea");
+         const p = document.querySelector("p");
+         const button = document.querySelector("button");
+         button.addEventListener("click", function(){
+              p.textContent = textarea.value.length + " kí tự";
+         });
+
+         
+   </script>
+</body>
+</html>
