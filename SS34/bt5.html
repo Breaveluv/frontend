@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+        .employees td {
+            height: 30px;
+        }
+        .employees th {
+            background-color: rgb(176, 173, 173);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách nhân viên Rikkei</h1>
+        <table class="table1" border="1">
+            <tr>
+                <td>
+                    <label for="">Tên nhân viên: </label>
+                    <input class="name" type="text">
+                </td>
+                <td>
+                    <label for="">Chức vụ</label>
+                    <input class="position" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button onclick="addEmployee()">Thêm nhân viên</button>
+                </td>
+            </tr>
+        </table>
+        <table class="employees" border="1">
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Chức Vụ</th>
+                <th>Hành động</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadEmployees);
+        
+        function addEmployee() {
+            let name = document.querySelector(".name").value.trim();
+            let position = document.querySelector(".position").value.trim();
+            
+            if (name === "" || position === "") {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            
+            let employees = JSON.parse(localStorage.getItem("employees")) || [];
+            employees.push({ name, position });
+            localStorage.setItem("employees", JSON.stringify(employees));
+            
+            renderEmployees();
+            
+            document.querySelector(".name").value = "";
+            document.querySelector(".position").value = "";
+        }
+
+        function loadEmployees() {
+            renderEmployees();
+        }
+        
+        function renderEmployees() {
+            let table = document.querySelector(".employees");
+            table.innerHTML = `
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Chức Vụ</th>
+                    <th>Hành động</th>
+                </tr>`;
+            
+            let employees = JSON.parse(localStorage.getItem("employees")) || [];
+            employees.forEach((emp, index) => {
+                let row = table.insertRow();
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.position}</td>
+                    <td><button onclick="deleteEmployee(${index})">Xóa</button></td>
+                `;
+            });
+        }
+        
+        function deleteEmployee(index) {
+            let employees = JSON.parse(localStorage.getItem("employees")) || [];
+            employees.splice(index, 1);
+            localStorage.setItem("employees", JSON.stringify(employees));
+            renderEmployees();
+        }
+    </script>
+</body>
+</html>

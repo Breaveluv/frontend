@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">email</label>
+    <input id="email" type="text"> <br>
+    <label for="">mật khẩu</label>
+    <input id="password" type="text"> <br>
+    <label for="">xác nhận mật khẩu</label>
+    <input id="confirmpassword" type="text"> <br>
+    <button onclick="register()">đăng ký</button>
+    <script>
+        //  tạo mảng chứa danh sách người đăng ký
+        let users= JSON.parse(localStorage.getItem("users"))||[];
+        function register() {
+            // lấy thông tin của người dùng nhập
+            let email= document.getElementById("email").value;
+            let password= document.getElementById("password").value;
+            let confirmPassword= document.getElementById("confirmpassword").value;
+            /* 
+                email đúng định dạng hay không
+                mật khẩu có trùng khớp hay không
+                email đã tồn tại hay chưa?
+            */
+           if(!email.includes("@")){
+               console.log("email không đúng định dạng");
+               return;
+           }
+           if(email==""){
+               console.log("email không được để trông");
+               return;
+              }
+            if(password==""){
+                console.log("mật khẩu không được để trống");
+                return;
+            }
+              if(password!=confirmPassword){
+                
+                console.log("mật khẩu không trùng khớp");
+                return;
+            }
+            for(let i=0; i<users.length;i++){
+                if(users[i].email==email){
+                    console.log("email đã tồn tại");
+                    return;
+                }
+            }
+            let user={
+                id: Math.floor(Math.random()*65656566),
+                email:email,
+                password:password
+            }
+            users.push(user);
+            // lưu dữ liệu lên local
+            localStorage.setItem("users",JSON.stringify(users));
+            // chuyển sang trang đăng nhập
+            window.location="./bt3.html";
+        }
+    </script>
+</body>
+</html>

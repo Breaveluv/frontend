@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: #0066CC;
+            margin-bottom: 20px;
+        }
+        div {
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: center;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Management</h1>
+    <div> 
+        <input type="hidden" id="taskId"> <!-- Ẩn ID để cập nhật task -->
+        <input type="text" id="taskContent" placeholder="Task Content">
+        <input type="date" id="dueDate">
+        <select id="status">
+            <option value="">-- Select Status --</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <input type="text" id="assignedTo" placeholder="Assigned To">
+        <button onclick="addOrUpdateTask()">Submit</button>
+    </div>
+    
+    <table>  
+        <thead>  
+            <tr>  
+                <th>#</th>  
+                <th>Content</th>  
+                <th>Due Date</th>  
+                <th>Status</th>  
+                <th>Assigned To</th>  
+                <th>Action</th>  
+            </tr>  
+        </thead>  
+        <tbody></tbody>  
+    </table> 
+
+    <script>
+        let courses = JSON.parse(localStorage.getItem("courses")) || [
+            { id: 1, content: "Learn Javascript Session 01", dueDate: "2023-04-17", status: "Pending", assignedTo: "Anh Bách" },
+            { id: 2, content: "Learn Javascript Session 2", dueDate: "2023-04-17", status: "Pending", assignedTo: "Lâm Th" },
+            { id: 3, content: "Learn CSS Session 1", dueDate: "2023-04-17", status: "Pending", assignedTo: "Hiểu Ci Ốt Ốt" }
+        ];
+        
+        function renderCourses() {
+            let content = "";
+            for (let i = 0; i < courses.length; i++) {
+                content += `
+                    <tr>
+                        <td>${courses[i].id}</td>
+                        <td>${courses[i].content}</td>
+                        <td>${courses[i].dueDate}</td>
+                        <td>${courses[i].status}</td>
+                        <td>${courses[i].assignedTo}</td>
+                        <td>
+                            <button onclick="editCourse(${courses[i].id})">Edit</button>
+                            <button onclick="deleteCourse(${courses[i].id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            }
+            
+            document.querySelector("tbody").innerHTML = content;
+            localStorage.setItem("courses", JSON.stringify(courses)); // Lưu dữ liệu mới
+            console.log(courses);
+        }
+
+        function addOrUpdateTask() {
+            let taskId = document.getElementById("taskId").value;
+            let content = document.getElementById("taskContent").value;
+            let dueDate = document.getElementById("dueDate").value;
+            let status = document.getElementById("status").value;
+            let assignedTo = document.getElementById("assignedTo").value;
+
+            if (!content || !dueDate || !status || !assignedTo) {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+
+            if (taskId) {
+                // Nếu có ID, cập nhật task cũ
+                let index = courses.findIndex(course => course.id == taskId);
+                if (index !== -1) {
+                    courses[index].content = content;
+                    courses[index].dueDate = dueDate;
+                    courses[index].status = status;
+                    courses[index].assignedTo = assignedTo;
+                }
+            } else {
+                // Tạo ID mới bằng cách tìm số lớn nhất hiện tại + 1
+                let maxId = courses.length > 0 ? Math.max(...courses.map(c => c.id)) : 0;
+                let newTask = {
+                    id: maxId + 1,
+                    content: content,
+                    dueDate: dueDate,
+                    status: status,
+                    assignedTo: assignedTo
+                };
+                courses.push(newTask);
+            }
+
+            resetForm();
+            renderCourses();
+        }
+
+        function deleteCourse(id) {
+            courses = courses.filter(course => course.id !== id);
+            renderCourses();
+        }
+
+        function editCourse(id) {
+            let course = courses.find(c => c.id === id);
+            if (!course) return;
+
+            document.getElementById("taskId").value = course.id;
+            document.getElementById("taskContent").value = course.content;
+            document.getElementById("dueDate").value = course.dueDate;
+            document.getElementById("status").value = course.status;
+            document.getElementById("assignedTo").value = course.assignedTo;
+        }
+
+        function resetForm() {
+            document.getElementById("taskId").value = "";
+            document.getElementById("taskContent").value = "";
+            document.getElementById("dueDate").value = "";
+            document.getElementById("status").value = "";
+            document.getElementById("assignedTo").value = "";
+        }
+
+        renderCourses();
+        function sortid(){
+            courses.sort(function(a,b){
+                return a.id-b.id;
+            });
+            renderCourses();
+        }
+        
+
+    </script>
+</body>
+</html>
