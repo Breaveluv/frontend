@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Danh Mục</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px;
+            background-color: #4094F7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .login-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Danh mục</h1>
+        <button class="btn" onclick="openForm()">Thêm mới danh mục</button>
+    </div>
+    <table id="table-body">
+        <tr>
+            <th>Mã danh mục</th>
+            <th>Tên danh mục</th>
+            <th>Trạng thái</th>
+            <th>Chức năng</th>
+        </tr>
+    </table>
+    <form class="login-form" id="category-form" onsubmit="return confirmAdd(event)">
+        <h2>Thêm mới danh mục</h2>
+        <label for="categoryId">Mã danh mục</label>
+        <input type="text" id="categoryId" required><br>
+        <label for="categoryName">Tên danh mục</label>
+        <input type="text" id="categoryName" required><br>
+        <label>Trạng thái</label>
+        <input type="radio" name="status" value="Đang hoạt động" checked> Đang hoạt động
+        <input type="radio" name="status" value="Ngừng hoạt động"> Ngừng hoạt động<br>
+        <button type="submit" class="btn">Lưu</button>
+        <button type="button" class="btn" onclick="closeForm()">Hủy</button>
+    </form>
+    <script>
+        let danhMuc = JSON.parse(localStorage.getItem("danhMuc")) || [];
+        function openForm() {
+            document.getElementById("category-form").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("category-form").style.display = "none";
+        }
+        function confirmAdd(event) {
+            event.preventDefault();
+            let madanhmuc = document.getElementById("categoryId").value;
+            let tendanhmuc = document.getElementById("categoryName").value;
+            let trangthai = document.querySelector('input[name="status"]:checked').value;
+            danhMuc.push({ madanhmuc, tendanhmuc, trangthai });
+            localStorage.setItem("danhMuc", JSON.stringify(danhMuc));
+            alert("Thêm thành công");
+            closeForm();
+            renderTable();
+        }
+        function renderTable() {
+            let table = document.getElementById("table-body");
+            table.innerHTML = `<tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+                <th>Chức năng</th>
+            </tr>`;
+            danhMuc.forEach(item => {
+                let row = table.insertRow();
+                row.innerHTML = `<td>${item.madanhmuc}</td>
+                                 <td>${item.tendanhmuc}</td>
+                                 <td>${item.trangthai}</td>
+                                 <td><button onclick="deleteCategory('${item.madanhmuc}')">Xóa</button></td>`;
+            });
+        }
+        function deleteCategory(id) {
+            danhMuc = danhMuc.filter(item => item.madanhmuc !== id);
+            localStorage.setItem("danhMuc", JSON.stringify(danhMuc));
+            renderTable();
+        }
+
+        renderTable();
+    </script>
+</body>
+</html>

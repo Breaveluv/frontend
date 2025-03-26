@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: black;
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            margin: 10px;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: row;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>TO-Do List K24</h1>
+  <div>  <input type="text" id="job" placeholder="Nhập công việc">
+    <button onclick="add()">Thêm</button>
+</div>
+    <ul>
+
+    </ul>
+   <script>
+    let jobs =JSON.parse(localStorage.getItem("jobs")) || [];
+    function render(data){
+        let str="";
+        for (let i = 0; i < jobs.length; i++) {
+            str+=
+            `
+            <li>${jobs[i]}
+            <button onclick=deleteJob(${i})>Xóa</button>
+            <button onclick=editJob(${i})>Sửa</button>
+            </li>
+            `
+        }
+        document.querySelector("ul").innerHTML = str;
+        console.log(jobs);
+    }
+    function add(){
+        const job = document.getElementById("job");
+        event.preventDefault();
+        if(job.value.trim() === ""){
+            alert("Nhập công việc");
+            return;
+        }
+        jobs.push(job.value);
+        localStorage.setItem("jobs",JSON.stringify(jobs));
+        render(jobs);
+        job.value = "";
+    }
+    function deleteJob(index){
+        jobs.splice(index,1);
+        localStorage.setItem("jobs",JSON.stringify(jobs));
+        render(jobs);
+    }
+
+   </script>
+</body>
+</html>

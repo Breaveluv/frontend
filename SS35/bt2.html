@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD BOOKMARK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: rgb(175, 8, 231);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .head {
+            background-color: black;
+            color: white;
+            width: 20%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            text-align: center;
+        }
+        .form input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form button:hover {
+            background-color: #333;
+        }
+        .bookmark-list {
+            margin-top: 20px;
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .bookmark-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bookmark-item:last-child {
+            border-bottom: none;
+        }
+        .bookmark-item a {
+            color: rgb(234, 118, 234);
+            text-decoration: none;
+        }
+        .bookmark-item a:hover {
+            text-decoration: underline;
+        }
+        .bookmark-item button {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .bookmark-item button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">ADD BOOKMARK</div>
+        <div class="form">
+            <input type="text" id="bookmarkName" placeholder="Enter bookmark name">
+            <input type="url" id="bookmarkURL" placeholder="Enter bookmark URL">
+            <button onclick="addBookmark()">Add Bookmark</button>
+        </div>
+        <div class="bookmark-list" id="bookmarkList">
+        </div>
+    </div>
+    <script>
+        let bookmarkList = document.getElementById('bookmarkList');
+
+        function addBookmark() {
+            let name = document.getElementById('bookmarkName').value;
+            let url = document.getElementById('bookmarkURL').value;
+            localStorage.setItem(name, url);
+
+            if (name && url) {
+                const bookmarkItem = document.createElement('div');
+                bookmarkItem.className = 'bookmark-item';
+                bookmarkItem.innerHTML = `
+                    <a href="${url}" target="_blank">${name}</a>
+                    <button onclick="removeBookmark(this)">Delete</button>
+                `;
+                bookmarkList.appendChild(bookmarkItem);
+                document.getElementById('bookmarkName').value = '';
+                document.getElementById('bookmarkURL').value = '';
+            } else {
+                alert('Please enter both name and URL!');
+            }
+        }
+        function removeBookmark(button) {
+            const bookmarkItem = button.parentElement;
+            bookmarkList.removeChild(bookmarkItem);
+        }
+    </script>
+</body>
+</html>
