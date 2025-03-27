@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+            margin-top: 100px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            background-color: #4094F7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .container1 {
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nhập tên của bạn</h1>
+        <input type="text" id="name" placeholder="Nhập tên của bạn">
+        <button onclick="submit()">Lưu</button>
+    </div>
+    <div class="container1">
+        <p>👋 Chào bạn,</p>
+        <button onclick="updateName()">Đổi tên</button>
+    </div>
+    <script>
+
+      function submit() {
+          const name = document.querySelector('#name').value;
+          document.querySelector('.container').style.visibility = 'hidden';
+          document.querySelector('.container1').style.visibility = 'visible';
+          localStorage.setItem('name', name);
+          document.querySelector('.container1').innerHTML = `<p>👋 Chào ${name},</p><button onclick="updateName()">Đổi tên</button>`;
+      }
+       function updateName() {
+        localStorage.getItem('name');
+           document.querySelector('.container').style.visibility = 'visible';
+           document.querySelector('.container1').style.visibility = 'hidden';
+       }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px;
+            margin: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+            }
+        .do {
+            background-color: red;
+        }
+
+        .xanh {
+            background-color: green;
+        }
+
+        .vang {
+            background-color: yellow;
+             color: black; 
+        }
+
+        .tim {
+            background-color: purple;
+        }
+
+    </style>
+</head>
+<body id="body">
+   <h1>Chọn màu yêu thích</h1>
+    <button class="do" onclick="changeColor('red')">Đỏ</button>
+    <button class="xanh" onclick="changeColor('green')">Xanh</button>
+    <button class="vang" onclick="changeColor('yellow')">Vàng</button>
+    <button class="tim" onclick="changeColor('purple')">Tím</button>
+    <script>
+        function changeColor(color) {
+            document.getElementById('body').style.backgroundColor = color;
+            localStorage.setItem('color', color);
+        }
+
+       
+        window.onload = function() {
+            const savedColor = localStorage.getItem('color');
+            if (savedColor) {
+                document.getElementById('body').style.backgroundColor = savedColor;
+            }
+        };
+    </script>
+    
+</body>
+</html>

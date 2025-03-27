@@ -1,0 +1,89 @@
+<!DOCTYPE html>  
+<html lang="vi">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Danh Sách Sản Phẩm</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+   
+        .container {  
+            max-width: 800px;  
+            margin: 0 auto;  
+            text-align: center;  
+        }  
+        .top {  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+        }  
+        .product {  
+            background-color: white;  
+            border-radius: 8px;  
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+            margin: 15px 0;  
+            padding: 20px;  
+        }  
+        .product img {  
+            width: 100%;  
+            border-radius: 5px;  
+        }  
+        .product h2 {  
+            color: #555;  
+        }  
+        .product p {  
+            font-size: 14px;  
+            color: #888;  
+        }  
+        button {  
+            background-color: #4CAF50;  
+            color: white;  
+            border: none;  
+            padding: 10px 15px;  
+            border-radius: 5px;  
+            cursor: pointer;  
+        }  
+        button:hover {  
+            background-color: #45a049;  
+        }
+        .fa-sun {
+            color: yellow;
+        }
+        
+    </style>
+</head>  
+<body>  
+    <div class="container">  
+       <div class="top"> <h1>Danh Sách Sản Phẩm</h1> 
+        <i class="fa-solid fa-sun" onclick="darkmode()"></i> 
+    </div>
+        <div class="product">  
+            <img src="san-pham1.jpg" alt="Giày Sneaker">  
+            <h2>Giày Sneaker</h2>  
+            <p>1.200.000đ</p>  
+            <button>Mua ngay</button>  
+        </div>  
+        <div class="product">  
+            <img src="san-pham2.jpg" alt="Đồng hồ nam">  
+            <h2>Đồng hồ nam</h2>  
+            <p>2.500.000đ</p>  
+            <button>Mua ngay</button>  
+        </div>  
+        <div class="product">  
+            <img src="san-pham3.jpg" alt="Laptop Gaming">  
+            <h2>Laptop Gaming</h2>  
+            <p>15.000.000đ</p>  
+            <button>Mua ngay</button>  
+        </div>  
+    </div>  
+    <script>
+        function darkmode() {
+            document.body.style.backgroundColor = 'black';
+         
+            document.body.style.color = 'white';
+            document.querySelector('.fa-sun').style.display = 'none';
+            
+        }
+    </script>
+</body>  
+</html>  

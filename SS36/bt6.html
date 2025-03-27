@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống đánh giá sản phẩm</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 20px;
+}
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 400px;
+}
+
+.stars {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.stars.active,
+.stars:hover {
+  color: gold;
+}
+
+.comment-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.comment-box {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.comment-list {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-list li {
+  background: #fff;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-list span {
+  font-weight: bold;
+  color: gold;
+}
+img {
+  width: 100%;
+  margin: 15px 0;
+}
+    </style>
+  </head>
+  <body>
+    <div class="product">
+      <h2>Sản phẩm: Tai nghe Bluetooth</h2>
+      <img
+        src="https://imgs.search.brave.com/JRPdDRzOPxD2puv-eXZx8AiHMt7ySnUVRZs4uCbu7CI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI5/NDk2NjY4Ni9waG90/by9iZWlqaW5nLWNo/aW5hLWFpcnBvZHMt/bWF4LWlzLXNlZW4t/YXQtYW4tYXBwbGUt/c3RvcmUtb24tamFu/dWFyeS0yLTIwMjEt/aW4tYmVpamluZy1j/aGluYS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9aXlyd0Np/TkJ6UW9jZzdUTHEt/LTNpNGM5dXpiTkda/NHprOW4tdUwwRWtk/Zz0"
+        alt=""
+      />
+      <p>Đánh giá sản phẩm:</p>
+      <div id="rating">
+        <span onclick="star(`11`)" class="stars" data-value="1">★</span>
+        <span onclick="star(`12`)" class="stars" data-value="2">★</span>
+        <span onclick="star(`13`)" class="stars" data-value="3">★</span>
+        <span onclick="star(`14`)" class="stars" data-value="4">★</span>
+        <span onclick="star(`15`)" class="stars" data-value="5">★</span>
+      </div>
+      <p id="selected-rating">Bạn chưa đánh giá.</p>
+
+      <!-- Bình luận -->
+      <div class="comment-section">
+        <h3>Bình luận</h3>
+        <textarea id="comment-input" class="comment-box" placeholder="Nhập bình luận..."></textarea>
+        <button onclick="submitReview()">Gửi</button>
+        <ul id="comment-list" class="comment-list">
+          <!-- sử dụng thẻ li và bên trong là thẻ span chứa sao và thẻ b chưa nội dung đánh giá -->
+          <!-- <li> <span>★★★★★<span> <b>Hay qué</b> </li> -->
+        </ul>
+      </div>
+    </div>
+    <script>
+      function star(id) {
+        const stars = document.querySelectorAll('.stars');
+        const selectedRating = document.querySelector('#selected-rating');
+        stars.forEach((star) => {
+          star.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+        selectedRating.textContent = `Bạn đã đánh giá ${document.getElementById(id).dataset.value} sao.`;
+      }
+      function submitReview() {
+        const commentInput = document.querySelector('#comment-input').value;
+        const commentList = document.querySelector('#comment-list');
+        const li = document.createElement('li');
+        li.innerHTML = `<span></span> <b>${commentInput}</b>`;
+        commentList.appendChild(li);
+      }
+
+    </script>
+  </body>
+</html>
